@@ -1,0 +1,14 @@
+Sun Jan 21 16:16:00 PST 2024
+user: obliv
+home: /home/obliv
+shell: /bin/bash
+pwd: /home/obliv/Code/mcb185_homework
+path: /usr/local/bin:/usr/bin:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/WINDOWS/System32/OpenSSH:/cygdrive/c/Program Files/Bandizip:/cygdrive/c/Users/obliv/AppData/Local/Microsoft/WindowsApps
+CYGWIN_NT-10.0-22621 Tree-Diagram 3.4.10-1.x86_64 2023-11-29 12:12 UTC x86_64 Cygwin
+Python 3.9.16
+/home/obliv/Code
+/home/obliv/Code/MCB185
+/home/obliv/Code/MCB185/.git
+/home/obliv/Code/MCB185/data
+/home/obliv/Code/mcb185_homework
+/home/obliv/Code/mcb185_homework/.git
