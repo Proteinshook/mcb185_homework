@@ -10,7 +10,7 @@ def quad(a, b, c):
 	x2 = (-b + math.sqrt((b**2) - 4 * a * c)) / (2 * a)
 	if 0 < ((b**2) - 4 * a * c):	
 		return x1, x2
-	else :
+	else:
 		return x1
 
 print(quad(1, 2, 3))
