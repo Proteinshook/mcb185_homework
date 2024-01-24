@@ -1,4 +1,5 @@
 """
+21quadratic.py by Ethan Djou
 Program for solving the quadratic formula 
 (can calculate for one, two and zero roots)
 """
@@ -13,7 +14,12 @@ def quad(a, b, c):
 	else:
 		return x1
 
-print(quad(1, 2, 3))
+# Testing the program
+
+print(quad(1, 13, 3))
+print(quad(15, 21, 5))
+print(quad(1, 15, 1))
+print(quad(565, 1000, 67))
 
 
 
