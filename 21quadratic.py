@@ -1,8 +1,6 @@
-"""
-21quadratic.py by Ethan Djou
-Program for solving the quadratic formula 
-(can calculate for one, two and zero roots)
-"""
+# 21quadratic.py by Ethan Djou (can calculate for one, two and zero roots)
+
+
 import math
 def quad(a, b, c):
 	if 0 > ((b**2) - 4 * a * c):

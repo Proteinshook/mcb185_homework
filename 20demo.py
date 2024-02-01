@@ -23,7 +23,7 @@ print(c)
 print(type(a), type(b), type(c), sep=', ')
 
 
-def greeting():              # the name must be followed by ():
+def greeting():  
 	print('hello Ethan')
 
 greeting() 
@@ -44,10 +44,7 @@ def pythagoras2(a, b):      # It is not required to have variable c or x
 print(pythagoras2(3, 4))
 print(pythagoras2(13, 14))
 
-"""
-Write a function that turns negative numbers into positive numbers and vise versa.
-Give your function a name that is simultaneously simple and descriptive.
-"""
+
 def reversecharge(a):
 	if a > 0: return a * -1
 	if a < 0: return abs(a)
