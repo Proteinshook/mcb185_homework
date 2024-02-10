@@ -10,6 +10,7 @@
 ## 46savingthrows.py
 **This gives us the probability of success depending**
 **on three different difficulty classes**
+
 advantage
 5       0.957
 10      0.806 
@@ -28,6 +29,7 @@ normal
 ## 47deathsaves.py
 **This calculates the probability of death,**
 **stabilization, and revive**
+
 0.4033
 0.4138
 0.1829
