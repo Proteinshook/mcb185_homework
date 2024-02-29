@@ -1,7 +1,7 @@
 # dogma.py 
 
 def transcribe(dna):
-    return dna.replace('T', 'U')
+	return dna.replace('T', 'U')
 
 
 def revcomp(dna):
@@ -51,15 +51,15 @@ def translate(dna):
 	return ''.join(aas)
 	
 def gc_comp(seq):
-    return (seq.count('C') + seq.count('G')) / len(seq)
+	return (seq.count('C') + seq.count('G')) / len(seq)
 	
 	
 	
 def gc_skew(seq):
-    c = seq.count('C')
-    g = seq.count('G')
-    if c + g == 0: return 0
-    return (g - c) / (g + c)
+	c = seq.count('C')
+	g = seq.count('G')
+	if c + g == 0: return 0
+	return (g - c) / (g + c)
 
 
 
