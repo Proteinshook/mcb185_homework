@@ -66,14 +66,3 @@ for i in range(0, len(joined_seq), 60):
 
 
 
-
-
-"""
-def dust_mask(sequence, window_size, entropy_threshold):
-    masked_sequence = []
-    for i in range(0, len(sequence) - window_size + 1):
-        window = sequence[i:i + window_size]
-        entropy = calculate_entropy(window)
-        masked_sequence += ['N'] * window_size if entropy < entropy_threshold else list(window)
-    return ''.join(masked_sequence)
-"""

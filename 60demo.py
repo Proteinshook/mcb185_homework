@@ -8,7 +8,8 @@ for defline, seq in mcb185.read_fasta(sys.argv[1]):
 
 
 
-# program that calculates the GC composition of nucleotide sequences in a FASTA file
+# program that calculates the GC composition of 
+#nucleotide sequences in a FASTA file
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
 	defwords = defline.split()
 	name = defwords[0]
@@ -17,7 +18,7 @@ for defline, seq in mcb185.read_fasta(sys.argv[1]):
 		if nt == 'C' or nt == 'G': gc =+ 1
 	print(name, gc/len(seq))
 
- # modify your program so that it counts 5 nucleotides (ACGTN)
+# modify your program so that it counts 5 nucleotides (ACGTN)
 
 for defline, seq in mcb185.read_fasta(sys.argv[1]):
 	defwords = defline.split()
