@@ -46,11 +46,11 @@ for defline, seq in mcb185.read_fasta(path):
 		else:
 			sequence.append(s)
 	
-joined_seq = ''.join(sequence)
+	joined_seq = ''.join(sequence)
 
-for i in range(0, len(joined_seq), 60):
-	line = joined_seq[i:i+60]
-	print(line)
+	for i in range(0, len(joined_seq), 60):
+		line = joined_seq[i:i+60]
+		print(line)
 
 		
 				

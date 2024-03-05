@@ -14,9 +14,7 @@ w    = int(sys.argv[2])
 
 for defline, seq in mcb185.read_fasta(path):
 	fullseq = list(seq)
-	window = fullseq[:w]
-	gccomp = dogma.gc_comp(window)
-	gcskew = dogma.gc_skew(window)
+	window = fullseq[0:w]
 	gnum = window.count('G')
 	cnum = window.count('C')
 	
@@ -30,15 +28,9 @@ for defline, seq in mcb185.read_fasta(path):
 		if   pickup == 'G': gnum += 1
 		elif pickup == 'C': cnum += 1
 		
-		gccomp2 = (gnum + cnum) / w
-		if (gnum + cnum) > 0: gcskew2 = (gnum - cnum) / (gnum + cnum)
-		else:                 gcskew2 = 0
-		print(f'{i}\t{gccomp2:.3f}\t{gcskew2:.3f}')
-
-
-
-
-
-
+		gccomp = (gnum + cnum) / w
+		if (gnum + cnum) > 0: gcskew = (gnum - cnum) / (gnum + cnum)
+		else:                 gcskew = 0
+		print(f'{i}\t{gccomp:.3f}\t{gcskew:.3f}')
 
 
