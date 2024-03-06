@@ -1,4 +1,4 @@
-# 65transmembrane by Ethan Djou
+# 65transmembrane by Ethan Djou coauthored with Khalid Saif
 
 import sys
 import dogma
@@ -18,9 +18,8 @@ def calculate_avg_kd(sequence):
 
 	
 def transmembrane(sequence, w, region, kd):
-	if len(sequence) >= 30:
-		if w > 8: transmembrane_region = sequence[region:]
-		else:     transmembrane_region = sequence[:region]
+	if len(sequence) >= len(region):
+		transmembrane_region = region
 		for i in range(len(transmembrane_region) -w +1):
 			s = transmembrane_region[i:i+w]
 			avg_kd = calculate_avg_kd(s)
@@ -31,8 +30,8 @@ def transmembrane(sequence, w, region, kd):
 
 total_transmembrane = 0
 for defline, seq in mcb185.read_fasta(path):
-	if transmembrane(seq, 8, 30, 2.5) == True:
-		if transmembrane(seq, 11, 30, 2.0) == True:
+	if transmembrane(seq, 8, seq[:30], 2.5) == True:
+		if transmembrane(seq, 11, seq[30:], 2.0) == True:
 			print(defline[:60])
 			total_transmembrane +=1
 print(total_transmembrane)

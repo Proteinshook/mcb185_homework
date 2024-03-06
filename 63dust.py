@@ -1,6 +1,5 @@
 # 63dust by Ethan Djou, Coauthored Khalid Saif
 import sys
-import dogma
 import mcb185
 import math
 
@@ -19,21 +18,58 @@ def calculate_entropy(a, c, g, t):
 	if t != 0: entropy += pt * math.log2(pt)
 	return -entropy
 
-
+# dev data
+"""
+seq = 'TGATATTGATATCACCAAATAAAAAACGCCTTAGTAAGTATTTTTC'
+w = 7
+entropy_threshold = 1.4
+"""
 
 
 path              = sys.argv[1]
 w                 = int(sys.argv[2])
 entropy_threshold = float(sys.argv[3])
 
-sequence = []
-n_list = []
-for i in range(w):
-	n_list.append('N')
-N = ''.join(n_list)
 
 for defline, seq in mcb185.read_fasta(path):
+
 	print(f'>{defline}')
+
+	sequence = list(seq)
+	
+	for i in range(len(seq) +1 - w):
+		s = seq[i:i+w]
+		A = s.count('A')
+		C = s.count('C')
+		G = s.count('G')
+		T = s.count('T')
+		entropy_s = calculate_entropy(A, C, G, T)
+		if entropy_s < entropy_threshold:
+			for j in range(i, i + w):
+				sequence[j] = 'N'
+		
+	joined_seq = ''.join(sequence)
+
+	for i in range(0, len(joined_seq), 60):
+		line = joined_seq[i:i+60]
+		print(line)
+
+
+
+
+
+# old code before fixing
+
+"""
+for defline, seq in mcb185.read_fasta(path):
+	print(f'>{defline}')
+	
+	sequence = []
+	n_list = []
+	for i in range(w):
+		n_list.append('N')
+	N = ''.join(n_list)
+	
 	for i in range(0 ,len(seq) +1, w):
 		s = seq[i:i+w]
 		A = s.count('A')
@@ -51,9 +87,7 @@ for defline, seq in mcb185.read_fasta(path):
 	for i in range(0, len(joined_seq), 60):
 		line = joined_seq[i:i+60]
 		print(line)
-
-		
-				
+"""
 
 
 
