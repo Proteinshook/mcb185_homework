@@ -1,4 +1,4 @@
-# 73missingkmer.py
+# 73missingkmer.py by Ethan Djou
 import sys
 import mcb185
 import itertools
@@ -18,12 +18,12 @@ missing_kmers = []
 k = 0
 while len(missing_kmers) <= 0:
 	k += 1
-	# runs through the normal and reverse complement sequence, 
-	# adding the kmers and their amount to dictionary
+	# Runs through the normal and reverse complement sequence, 
+	# Adding the kmers and their amount to dictionary
 	for defline, seq in mcb185.read_fasta(path):
 		kmercount(seq, k, kcount)
 		kmercount(dogma.revcomp(seq), k, kcount)
-	# generates all possible kmers, comparing thtm to the kcount dictionary
+	# Generates all possible kmers, comparing them to the kcount dictionary
 	for nts in itertools.product('ACGT', repeat=k):
 		kmer = ''.join(nts)
 		if kmer not in kcount:           
